@@ -4,37 +4,45 @@ An example of supervised machine learning to formulate a linear
 regression that models the movement of a large set of continuous data
 over time and forecasts the trajectory of that data into the future.
 
+### LINEAR REGRESSION
+
 Linear regression takes an input or explanatory variable, and tests for
 a relationship with an output variable. The input variables are usually
 arbitrary and assumptive.
 
 For example, if we were using linear regression to model a lemonade stand's business and to make some predictions about its sucess: the input variables 
 might be how hot it is outside, or how big the stand's sign was; the ouput 
-variable might be the daily revenue. We'd likely be testing the assumption
-that the heat on any given day, and the size of the lemonade stand's sign
-is what drives sales.
+variable might be the daily revenue or how much lemonade we sold. It
+could be useful in testing the assumption that the heat on any given day, 
+and the size of the lemonade stand's sign, is what drives our lemonade sales.
 
-In practice, linear regression in merely corroborating some variable's 
-impact. In speculatively modelling _causality_...more so than a surefire 
+In practice, however, linear regression _corroborates_ some variable's 
+impact--it speculatively models_causality_...more so than being a surefire 
 means of mining hard data and generating a prediction on which you'd want 
 to place a bet.
 
 This solution relies on the Python Data Analysis library (pandas, etc.) 
 to parse and analyze a _very_ large dataframe of publicly available stock 
 values for Google, and forecasts the future value of the stock's closing
-price for the next 33 days. The data is culled from _ten_years_ of daily 
-stock prices. The output for this program is an array of forecasted closing 
+price for the next 33 days. 
+
+The data is culled from _ten_years_ of daily stock prices for Google. 
+The output for this program is an array of forecasted adjusted closing 
 prices, and an accuracy rating of those prices, as well as a graphical
 plot of the prices--both past and predicted.
+
+### SUPERVISED LEARNING
 
 We call this "supervised" machine learning, because there's a bit of tinkering
 here... We "train" the algorithm to crunch the data, and do so until an 
 accuracy rating starts to look acceptable to us.
 
-As mentiond, the input variables leveraged by the linear regression algorithm
-are totally arbitrary. In this model, the differences between daily 
-high and low values as well as trading volume are considered impactful on
-the closing price.
+As mentioned, the input variables leveraged by the linear regression algorithm
+are totally arbitrary. In this model, the differences between daily high 
+and low values as well as trading volume are _assumed_ to be impactful on 
+the closing price...and we test the accuracy of that assumption.
+
+### MEASURING ACCURACY
 
 The metric for quantifying the model’s "predictive accuracy" is known as 
 R-Squared. R-Squared is more a measure of how each of the data points 
@@ -59,6 +67,8 @@ R-Squared, more so than a measure of forecast accuracy, is useful as means
 to corroborating market trends, or other technical indicators (for instance,
 a Regression Slope indicator--which reveals if the market is going up
 or down).
+
+### PLOTTING RESULTS
 
 For our model here, you can see the Python interpreter's output: an array 
 of daily adusted closing prices for Google going 33 days into the future. 
@@ -85,8 +95,9 @@ the docstrings and inline commentary in the linear_regression.py script.
 
 ### INSTALLATION AND USE
 
-You'll need to set up a virtual environment on your local machine, as per 
-any proper Python project. Virtualenvwrapper is also recommended.
+You'll need Python set up on your machine, of course, and you ought to set 
+up a virtual environment, as per any proper Python project. Virtualenvwrapper 
+is also recommended.
 
 To install, clone this repo into your virtual env and execute the following 
 command...
