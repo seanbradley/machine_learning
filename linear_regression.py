@@ -15,7 +15,9 @@ where the line crosses the y axis.
 
 Except in this case, rather than an x or y relating to an axis within a
 two dimensional space...X is _features_ (in the dataframe) and y is the 
-_label_.
+_label_...not to be confused with the xlabel and ylabel variables at the
+end of the script--which _are_ descriptors of each axis used by matplotlib
+to plot the date and price.
 
 """
 import pandas as pd

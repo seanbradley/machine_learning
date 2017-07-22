@@ -13,36 +13,68 @@ useful in describing or modelling the behavior between various factors
 driving some result--i.e., in discovering _causality_...more so than a
 surefire means of mining hard data on which you'd want to place a bet.
 
-The solution herein relies on binaries in the Python Data Analysis library 
-(pandas, etc.) to parse and analyze a very large dataframe of publicly 
-avaialble stock values (10 years of daily prices for Google), and predict 
-the value of the stock for each of 33 days into the future using the 
-adjusted closing price. 
+This solution relies on the Python Data Analysis library (pandas, etc.) 
+to parse and analyze a very large dataframe of publicly availble stock 
+values for Google, and forecasts the future value of the stock for the
+next 33 days. 
 
 This requires making some human driven assumptions to generate a (more) 
 accurate prediction--i.e., via "training" the algorithm to crunch the data.
 
-The script herein generates an array of forecasted values, and an accuracy
-rating of those values, and then plots these values graphically.
+Firstly, the input variables leveraged by the linear regression algorithm
+are totally arbitrary. Our model considers the differences between daily 
+high and low values as well as trading volume.
 
-The numeric metric for quantifying the model’s prediction accuracy is known 
-as r-squared, which falls between zero and one. A zero means that the model 
-has no predictive value, and a one means that the model perfectly predicts 
-everything.
+Using that data--culled from ten years of daily values--the script herein generates an array of predictive closing prices, and an accuracy
+rating of those prices, and then plots these graphically.
 
-R-squared is more a measure of how each of the data points conforms or are
-packed around the averaged trajectory for values known. (Our model considers
-the differences between daily high and low values as well as trading volume.)
+The numeric metric for quantifying the model’s "predictive accuracy" is 
+known as R-Squared. R-Squared is more a measure of how each of the data 
+points (daily prices) conforms to, or how tightly packed around they are
+to the the averaged trajectory those values. It references, to some degree, 
+the strength of the trajectory driving the forecast over a given duration
+of time.
 
-You can see the Python interpreters output array of 33 daily adusted closing prices into the future, and the accuracy rating of that predicive model 
-(bottom right of the array, after the closing bracket).
+R-Squared reveals the relationship of a value to time. The more closely 
+prices move in a linear relationship with the passing of time, the stronger 
+the trend. In other words, R-squared measures the degree to which the movement 
+of a stock price can be explained by the algorithm.
 
+R-Squared values range from 0 to 1. A score of 1.00 would indicate a perfect correlation, whereas a score of 0.00 indicates no correlation between the 
+price and the regression as calculated over the given regression period. 
+
+For example, if the R-Squared value over 30 days is at 0.8, this means  
+80% of the price movement for a security aligns or fits well with the 
+algorithm's assumptions. The other 20% indicates prices that do not fall
+into or fit well with the model.
+
+R-Squared more than a measure of forecast accuracy, is useful as means
+to corroborating market trends, or other technical indicators (for instance,
+a Regression Slope indicator...which reveals if the market is going up
+or down).
+
+You can see the Python interpreter's output: an array of daily adusted 
+closing prices for Google going 33 days into the future. The R-Squared
+value for those prices can be seen at the bottom right of the array, 
+after the closing bracket for the prices.
 
 ![Google Stock Prices -- Array and Accuracy](https://raw.githubusercontent.com/seanbradley/machine_learning/master/array_and_accuracy.png) 
 
-For additional comments regarding the methodology, see the docstrings and 
-inline commentary in linear_regression.py.
+Moreover, the script graph's these values. An example of the resultant graph 
+is included below:
 
+![Google Stock Prices -- Graph](https://raw.githubusercontent.com/seanbradley/machine_learning/master/graph.png) 
+
+The graph, in full, shows the trajectory of Google's stock for _ten_years_. 
+That's the underlying data set used to predict 33 days into the future. 
+The resultant _forecasted_ values are the blue blip at the right edge of 
+the image--zoomed in here:
+
+![Google Stock Prices -- Zoomed](https://raw.githubusercontent.com/seanbradley/machine_learning/master/graph--zoomed.png) 
+
+For additional comments regarding the methodology, and the technical 
+indicators used as the underly input variables for this model, see 
+the docstrings and inline commentary in the linear_regression.py script.
 
 ### INSTALLATION AND USE
 
@@ -78,15 +110,6 @@ Also, you'll need to make sure tkinter is installed...
     sudo apt-get install python3-tk
 
 You may also need to install SIP (sip-4.19.1) and/or PyQt4 (PyQt4_gpl_x11-4.12).
- 
-An example of the resultant graph is included in the repo and below:
-
-![Google Stock Prices -- Graph](https://raw.githubusercontent.com/seanbradley/machine_learning/master/graph.png) 
-
-The forecasted values are the blue blip at the right edge of the image--zoomed in here:
-
-![Google Stock Prices -- Zoomed](https://raw.githubusercontent.com/seanbradley/machine_learning/master/graph--zoomed.png) 
-
 
 ------------------------------------------------------------------------
 
@@ -94,8 +117,8 @@ Additional questions may be directed to Sean Bradley at:
 
 sean at blogblimp dot com
 
-The work herein is based on the work of Pythonista and data scientist, 
-Harrison Kinsley.
+The work herein is based closely on the work of Pythonista and data scientist, 
+Harrison Kinsley and his excellent machine learning introduction.
 
 ### LICENSE
 
