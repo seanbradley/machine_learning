@@ -1,4 +1,4 @@
-#Machine Learning
+# Machine Learning
 
 An example of using supervised machine learning to formulate a linear 
 regression from a large set of continuous data to model and forecast the
@@ -12,7 +12,7 @@ the algorithm to crunch the data.
 
 See docstrings and inline commentary.
 
-###INSTALLATION AND USE
+### INSTALLATION AND USE
 
 You'll need to set up a virtual environment on your local machine, as per 
 any proper Python project. Virtualenvwrapper is also recommended.
@@ -26,7 +26,7 @@ To run...
     
     python linear_regression.py
 
-###VISUALIZING THE RESULTS
+### VISUALIZING THE RESULTS
 
 For interactive graphing of the output in the Python interpreter without 
 iPython:
@@ -59,6 +59,6 @@ sean at blogblimp dot com
 The work herein is based on the work of Pythonista and data scientist, 
 Harrison Kinsley.
 
-###LICENSE
+### LICENSE
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
